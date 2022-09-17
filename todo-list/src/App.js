@@ -2,12 +2,18 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-const [id, setId] = useState('')
+const [items, setItems] = useState([]);
 
   return (
     <div className="App">
-      <input type="text" id='' placeholder='What needs to be done?' onChange={ e => setId(e.target.value)}/>
-      <button onClick={setId}></button>
+      <input type="text" id='' placeholder='What needs to be done?' onChange={ e => setItems(e.target.value)}/>
+      <ul>
+        { items.map(item => item (
+          <li key={item.id}>{item.value}</li>
+        ))
+
+        }
+      </ul>
     </div>
   );
 }
