@@ -2,11 +2,18 @@ button{
   height: 25px;
   width: 100px;
 }
-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 h1{
   color: lightgray;
+}
+ol,li{
+  padding-left: 0rem;
+}
+li{
+  border: solid 1px grey;
+  list-style: none;
+  width: 40%;
+}
+.textBox{
+  margin-left: 20px;
+  text-align: left;
 }
