@@ -16,8 +16,8 @@ const preventRefresh = (event) => {
 
   return (
     <div className="App">
-      <form onSubmit={preventRefresh}>
-      <input type="text" placeholder='What needs to be done?' onChange={ (e) => setItem(e.target.value)} />
+      <form >
+      <input type="text" placeholder='What needs to be done?' onSubmit={ (e) => setItem(e.target.value)} />
       </form>
       <ul>{list.map( (value, index) => 
         <li key={index}>{value}</li>)}
