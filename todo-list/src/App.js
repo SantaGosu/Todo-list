@@ -22,9 +22,10 @@ const preventRefresh = event => {
       <form onSubmit={preventRefresh} >
         <h1>Todo list</h1>
       <input size="20" id="textBox" type="text"  placeholder='What needs to be done?' onDoubleClick={(e) => setItem(e.target.value)} />
-        <ol>{list.map( (value, index) => 
+        <ul>{list.map( (value, index) => 
           <li key={index}>{value}</li>)}
-        </ol>
+        </ul>
+        <footer>someafeioj</footer>
       </form>
     </div>
   );

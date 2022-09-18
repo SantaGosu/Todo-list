@@ -1,3 +1,7 @@
+body{
+  padding-left: 45%;
+  padding-top: 15%;
+}
 button{
   height: 25px;
   width: 100px;
@@ -5,13 +9,11 @@ button{
 h1{
   color: lightgray;
 }
-ol,li{
-  padding-left: 0rem;
-}
 li{
   border: solid 1px grey;
   list-style: none;
-  width: 40%;
+  width: 15%;
+  height: 15%;
 }
 .textBox{
   margin-left: 20px;
