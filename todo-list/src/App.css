@@ -1,13 +1,11 @@
 body{
-  padding-left: 45%;
+  padding-left: 35%;
   padding-top: 15%;
 }
-button{
-  height: 25px;
-  width: 100px;
-}
+
 h1{
   color: lightgray;
+  padding-left: 14%;
 }
 li{
   border: solid 1px grey;
@@ -15,7 +13,6 @@ li{
   width: 15%;
   height: 15%;
 }
-.textBox{
-  margin-left: 20px;
-  text-align: left;
+.list-group-item{
+  width: 40%;
 }

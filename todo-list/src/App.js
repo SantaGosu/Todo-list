@@ -21,11 +21,12 @@ const preventRefresh = event => {
     <div className="container">
       <form onSubmit={preventRefresh} >
         <h1>Todo list</h1>
-      <input size="20" id="textBox" type="text"  placeholder='What needs to be done?' onDoubleClick={(e) => setItem(e.target.value)} />
-        <ul>{list.map( (value, index) => 
-          <li key={index}>{value}</li>)}
+        <input size="61" id="textBox" type="text"  placeholder='What needs to be done?' onDoubleClick={(e) => setItem(e.target.value)} />
+        <ul className='list-group'>{list.map( (value, index) => 
+          <li className='list-group-item' key={index}>{value}</li>)}
+          <li className='list-group-item'> todos left</li>
         </ul>
-        <footer>someafeioj</footer>
+        
       </form>
     </div>
   );
