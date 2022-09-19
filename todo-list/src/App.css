@@ -15,4 +15,8 @@ h1{
 }
 button{
   float: right;
+  height: 0px;
+}
+#hidden{
+  display: none;
 }

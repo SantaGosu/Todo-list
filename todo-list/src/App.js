@@ -7,6 +7,19 @@ function App() {
 const [item, setItem] = useState('Take a walk');
 const [list, setList] = useState([]);
 
+// fetch('/todos/user/SantaGosu'{
+//   method: "PUT",
+//   body: JSON.stringify(todos),
+//   headers: {
+//     "Content-Type": "application/json"
+//   }
+// }).then(resp => {
+//   console.log(resp.ok);
+// }).catch(error => {
+//   console.log(error);
+// })
+
+
 useEffect(() => {
   setList([...list, item])
 }, [item]);
@@ -15,10 +28,6 @@ const preventRefresh = event => {
   event.preventDefault();
 }
 
-const removeItem = () => {
-  console.log("remove " + item)
-}
-  
   return (
     <div className="container">
       <form onSubmit={preventRefresh} >
@@ -26,7 +35,7 @@ const removeItem = () => {
       <Searchbar setItem={setItem} />
       <ul className='list-group'>{list.map( (value, index) => 
         <li className='list-group-item' key={index}>{value}
-        <button type='button' className="btn btn-default"onClick={(e) => removeItem(item)}>x</button>
+        <button type='button' className="btn btn-default">x</button>
         </li>)}
         <li className='list-group-item'> todos left</li>
       </ul>
