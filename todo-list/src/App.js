@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import Searchbar from './components/Searchbar';
+import Searchbar from './components/Searchbar/Searchbar';
 
 function App() {
 const [item, setItem] = useState('Take a walk');
@@ -13,10 +13,8 @@ useEffect(() => {
 
 const preventRefresh = event => {
   event.preventDefault();
-  console.log("submitted")
   
 }
-
 
   return (
     <div className="container">
