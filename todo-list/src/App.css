@@ -7,12 +7,9 @@ h1{
   color: lightgray;
   padding-left: 14%;
 }
-li{
-  border: solid 1px grey;
-  list-style: none;
-  width: 15%;
-  height: 15%;
-}
 .list-group-item{
   width: 40%;
+}
+#search-input{
+  display: none;
 }
