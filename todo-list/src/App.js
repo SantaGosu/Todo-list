@@ -23,11 +23,6 @@ const preventRefresh = event => {
       <form onSubmit={preventRefresh} >
         <h1>Todo list</h1>
         <Searchbar />
-        <ul className='list-group'>{list.map( (value, index) => 
-          <li className='list-group-item' key={index}>{value}</li>)}
-          <li className='list-group-item'> todos left</li>
-        </ul>
-        
       </form>
     </div>
   );
