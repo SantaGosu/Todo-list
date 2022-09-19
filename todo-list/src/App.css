@@ -13,3 +13,6 @@ h1{
 #search-input{
   display: none;
 }
+button{
+  float: right;
+}
