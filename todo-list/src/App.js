@@ -6,18 +6,11 @@ import Searchbar from './components/Searchbar/Searchbar';
 function App() {
 const [item, setItem] = useState('Take a walk');
 const [list, setList] = useState([]);
+const [isShown, setIsShown] = useState(true);
 
-// fetch('/todos/user/SantaGosu'{
-//   method: "PUT",
-//   body: JSON.stringify(todos),
-//   headers: {
-//     "Content-Type": "application/json"
-//   }
-// }).then(resp => {
-//   console.log(resp.ok);
-// }).catch(error => {
-//   console.log(error);
-// })
+const handleClick = event => {
+  setIsShown(current => !current);
+};
 
 
 useEffect(() => {
@@ -34,8 +27,8 @@ const preventRefresh = event => {
         <h1>Todos</h1>
       <Searchbar setItem={setItem} />
       <ul className='list-group'>{list.map( (value, index) => 
-        <li className='list-group-item' key={index}>{value}
-        <button type='button' className="btn btn-default">x</button>
+        <li className='list-group-item' key={index} style={{display: isShown ? 'block' : 'none'}}>{value}
+        <button onClick={handleClick} type='button' className="btn btn-default">x</button>
         </li>)}
         <li className='list-group-item'> todos left</li>
       </ul>
