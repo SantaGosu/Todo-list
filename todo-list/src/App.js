@@ -8,7 +8,7 @@ function App() {
   const [list, setList] = useState([]);
 
  const funcGET = () => {
-      fetch("http://assets.breatheco.de/apis/fake/todos/user/SantaG',%7B", {
+      fetch("https://assets.breatheco.de/apis/fake/todos/user/SantaG',%7B", {
         method: "GET",
         headers: {"Content-type": "application/json;charset=UTF-8"}
       })
@@ -27,8 +27,9 @@ function App() {
           "label": "THIS IS A TEST",
           "done": false}
       ];
+      
     const getPUT = () => {
-      fetch("http://assets.breatheco.de/apis/fake/todos/user/SantaG',%7B", {
+      fetch("https://assets.breatheco.de/apis/fake/todos/user/SantaG',%7B", {
         method: "PUT",
         body: JSON.stringify(data),
         headers: {"Content-type": "application/json;charset=UTF-8"}
