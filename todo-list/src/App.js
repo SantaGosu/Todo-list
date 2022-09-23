@@ -17,30 +17,26 @@ function App() {
       .catch(err => console.log("ERROR FOR GET: " + err.message))
     }
 
-  let data = 
-      [
-        {
-          "label": "sample task 2",
-          "done": false
-        },
-        {
-          "label": "THIS IS A TEST",
-          "done": false}
-      ];
+    console.log("list is" + list)
+
+  let data =  [
+    {label: list, 
+      done: false
+    }
+  ];
+
       
     const getPUT = () => {
       fetch("https://assets.breatheco.de/apis/fake/todos/user/SantaG',%7B", {
         method: "PUT",
-        body: JSON.stringify(
-          setList([...list, item])
-        ),
+        body: JSON.stringify(data),
         headers: {"Content-type": "application/json;charset=UTF-8"}
       })
       .then(response => response.json())
       .then(json => console.log(json))
       .catch(err => console.log("ERROR to get PUT: " + err.message))
     }
-  
+
     
 
   useEffect(() => {
