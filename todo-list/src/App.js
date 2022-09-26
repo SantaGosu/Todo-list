@@ -17,19 +17,11 @@ function App() {
       .catch(err => console.log("ERROR FOR GET: " + err.message))
     }
 
-    console.log("list is" + list)
-
-  let data =  [
-    {label: list, 
-      done: false
-    }
-  ];
-
       
     const getPUT = () => {
       fetch("https://assets.breatheco.de/apis/fake/todos/user/SantaG',%7B", {
         method: "PUT",
-        body: JSON.stringify(data),
+        body: JSON.stringify(),
         headers: {"Content-type": "application/json;charset=UTF-8"}
       })
       .then(response => response.json())
@@ -62,7 +54,7 @@ function App() {
           <li className='list-group-item' key={index}>{value}
             <button type='button' onClick={()=>deleteTask(index)} className="btn btn-default">x</button>
           </li>)}
-          <li className='list-group-item'>{list} to dos left</li>
+          <li className='list-group-item'>to dos left</li>
         </ul>
       </form>
     </div>
