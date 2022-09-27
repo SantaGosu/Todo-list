@@ -54,7 +54,7 @@ function App() {
           <li className='list-group-item' key={index}>{value}
             <button type='button' onClick={()=>deleteTask(index)} className="btn btn-default">x</button>
           </li>)}
-          <li className='list-group-item'>to dos left</li>
+          <li className='list-group-item'>{list.length} to dos left</li>
         </ul>
       </form>
     </div>
