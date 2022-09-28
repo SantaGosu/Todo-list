@@ -21,7 +21,7 @@ function App() {
     const getPUT = () => {
       fetch("https://assets.breatheco.de/apis/fake/todos/user/SantaG',%7B", {
         method: "PUT",
-        body: JSON.stringify(),
+        body: JSON.stringify(deleteTask),
         headers: {"Content-type": "application/json;charset=UTF-8"}
       })
       .then(response => response.json())
