@@ -21,7 +21,12 @@ function App() {
     const getPUT = () => {
       fetch("https://assets.breatheco.de/apis/fake/todos/user/SantaG',%7B", {
         method: "PUT",
-        body: JSON.stringify(deleteTask),
+        body: JSON.stringify(
+          {
+            label: list,
+            "done": false
+          }
+        ),
         headers: {"Content-type": "application/json;charset=UTF-8"}
       })
       .then(response => response.json())
@@ -29,22 +34,25 @@ function App() {
       .catch(err => console.log("ERROR to get PUT: " + err.message))
     }
 
-    
-
   useEffect(() => {
     funcGET()
-    getPUT()
     setList([...list, item])
   }, [item]);
+
 
   const deleteTask = (index) => {
     setList(list.filter((element, i) => i !== index))
   }
 
+  // useEffect(() => {
+  //   getPUT()
+  // }, [deleteTask()])
+
   const preventRefresh = event => {
     event.preventDefault();
   }
 
+  console.log( "this is the list" + list)
   return (
     <div className="container">
       <form onSubmit={preventRefresh} >
