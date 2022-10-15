@@ -4,10 +4,41 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Searchbar from './components/Searchbar/Searchbar';
 
 function App() {
-  const [item, setItem] = useState(['Take a walk']);
+  const [item, setItem] = useState('Take a walk');
   const [list, setList] = useState([]);
 
+  console.log(item)
+
+  //should get todo from the api, not sure why its not, figure out after class
+  const GetFunction = () => {
+    fetch("https://assets.breatheco.de/apis/fake/todos/user/SantaG',%7B", {
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json"
+    }
+  })
+     .then((res) => res.json())
+     .then((data) => (data))
+  }
+
+  const PutFunction = () => {
+    fetch("https://assets.breatheco.de/apis/fake/todos/user/SantaG',%7B", {
+      method: "PUT",
+      body: JSON.stringify(
+        //THIS IS WHERE THE UPDATED TODO LIST SHOULD GO
+      ),
+      headers: {
+        "Content-Type": "application/json"
+      }
+  })
+  .then(response => response.json())
+  .then(json => console.log(json))
+  .then((data) => setList(data))
+  .catch(err => console.log("ERROR to get PUT: " + err.message))
+  }
+
   useEffect(() => {
+    PutFunction();
     setList([...list, item])
   }, [item]);
 
@@ -36,5 +67,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
