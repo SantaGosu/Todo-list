@@ -4,38 +4,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Searchbar from './components/Searchbar/Searchbar';
 
 function App() {
-  const [item, setItem] = useState('Take a walk');
+  const [item, setItem] = useState(['Take a walk']);
   const [list, setList] = useState([]);
 
- const funcGET = () => {
-      fetch("https://assets.breatheco.de/apis/fake/todos/user/SantaG',%7B", {
-        method: "GET",
-        headers: {"Content-type": "application/json;charset=UTF-8"}
-      })
-      .then(response => response.json())
-      .then(json => console.log(json))
-      .catch(err => console.log("ERROR FOR GET: " + err.message))
-    }
-
-      
-    const getPUT = () => {
-      fetch("https://assets.breatheco.de/apis/fake/todos/user/SantaG',%7B", {
-        method: "PUT",
-        body: JSON.stringify(
-          {
-            label: list,
-            "done": false
-          }
-        ),
-        headers: {"Content-type": "application/json;charset=UTF-8"}
-      })
-      .then(response => response.json())
-      .then(json => console.log(json))
-      .catch(err => console.log("ERROR to get PUT: " + err.message))
-    }
-
   useEffect(() => {
-    funcGET()
     setList([...list, item])
   }, [item]);
 
@@ -43,10 +15,6 @@ function App() {
   const deleteTask = (index) => {
     setList(list.filter((element, i) => i !== index))
   }
-
-  // useEffect(() => {
-  //   getPUT()
-  // }, [deleteTask()])
 
   const preventRefresh = event => {
     event.preventDefault();
